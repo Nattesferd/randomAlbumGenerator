@@ -1,0 +1,72 @@
+/* Mobile-only overrides (≤ 979px) per le STESSE classi già presenti */
+@media (max-width: 979px) {
+
+  /* Spaziature e tipografia più leggibili su schermi piccoli */
+  body { padding-bottom: 16px; }
+  header { padding: 20px 12px; }
+  header h1 { font-size: 22px; }
+  header p { font-size: 14px; }
+  .wrap { padding: 0 12px 24px; }
+
+  /* Card e griglie: 1 colonna, niente overflow */
+  .card { padding: 12px; border-radius: 14px; }
+  .grid { grid-template-columns: 1fr; gap: 12px; }
+
+  /* Filtri: sempre 1 colonna su mobile */
+  .filters { grid-column: 1 / -1; }
+  .filters .row { grid-template-columns: 1fr; gap: 10px; }
+
+  /* Combo scrivibili */
+  .cbx-input { height: 44px; font-size: 16px; }
+  .cbx-list {
+    max-height: 50vh;   /* evita che la tendina esca dallo schermo */
+    margin-top: 4px;
+  }
+  .cbx-item { padding: 10px 12px; font-size: 15px; }
+  .cbx-group { padding: 6px 12px; font-size: 12px; }
+
+  /* Campi e bottoni più “touch-friendly” */
+  input, select, button { font-size: 16px; padding: 10px 12px; }
+  .actions { gap: 10px; }
+  .actions button { width: 100%; } /* bottoni a tutta larghezza */
+
+  /* Output: layout a colonna, elementi centrati */
+  #output { grid-column: 1 / -1; }
+  #output .result-grid { grid-template-columns: 1fr; gap: 14px; }
+  #output .albumTop { grid-column: 1; grid-row: 1; justify-self: center; }
+  #output .albumDetails { grid-column: 1 / -1; }
+
+  /* Cover: niente 500x500 fissi → adattiva, quadrata, senza overflow */
+  .cover {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    aspect-ratio: 1 / 1;       /* mantiene “quadrata” dove supportato */
+    object-fit: cover;
+  }
+
+  /* Titoli e chip più compatti */
+  .artist { font-size: 22px; }
+  .title { font-size: 20px; }
+  .subtitle { font-size: 14px; }
+  .chips { gap: 8px; }
+  .chip { font-size: 12px; padding: 5px 8px; }
+
+  /* Metadati: colonne più strette per evitare righe troppo lunghe */
+  .meta { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
+  .box { padding: 10px; }
+  .label { font-size: 11px; }
+  .value { font-size: 14px; }
+
+  /* Link footer compatti e ben allineati */
+  .footer { margin-top: 10px; }
+  .footer-links { gap: 6px; }
+  .footer-links a { font-size: 14px; }
+
+  /* Tracklist: piena larghezza e testo non “schiacciato” */
+  .tracks { max-width: 100%; padding: 10px; }
+  .tracks h3 { font-size: 13px; }
+  .tracks li { gap: 8px; }
+  .tracks .t-title { font-size: 14px; }
+  .tracks .t-time { font-size: 12px; }
+}
